@@ -1,29 +1,34 @@
+// src/App.jsx
 import { Routes, Route } from "react-router-dom";
 import Navbar from "./components/Navbar.jsx";
 
-function Page({ title }) {
-  return (
-    <div className="mx-auto max-w-7xl px-4 py-10">
-      <h1 className="text-3xl font-bold">Tailwind is live</h1>
-    </div>
-  );
-}
+import Home from "./pages/Home.jsx";
+import Contact from "./pages/Contact.jsx";
+import Join from "./pages/Join.jsx";
+import Loyalty from "./pages/Loyalty.jsx";
+import EmailSignup from "./pages/EmailSignup.jsx";
+import Menu from "./pages/Menu.jsx";
+import Cart from "./pages/Cart.jsx";
+import Order from "./pages/Order.jsx";
+import SignIn from "./pages/SignIn.jsx";
 
 export default function App() {
   return (
-    <>
+    <div className="min-h-screen">
       <Navbar />
-      <Routes>
-        <Route path="/" element={<Page title="Home" />} />
-        <Route path="/contact" element={<Page title="Contact Us" />} />
-        <Route path="/join" element={<Page title="Join Our Team" />} />
-        <Route path="/loyalty" element={<Page title="Loyalty Sign Up" />} />
-        <Route path="/email-signup" element={<Page title="Email Marketing Sign Up" />} />
-        <Route path="/menu" element={<Page title="Menu" />} />
-        <Route path="/cart" element={<Page title="Cart" />} />
-        <Route path="/order" element={<Page title="Order Online" />} />
-        <Route path="/signin" element={<Page title="Sign In" />} />
-      </Routes>
-    </>
+      <main className="pt-16">
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/contact" element={<Contact />} />
+          <Route path="/join" element={<Join />} />
+          <Route path="/loyalty" element={<Loyalty />} />
+          <Route path="/email-signup" element={<EmailSignup />} />
+          <Route path="/menu" element={<Menu />} />
+          <Route path="/cart" element={<Cart />} />
+          <Route path="/order" element={<Order />} />
+          <Route path="/signin" element={<SignIn />} />
+        </Routes>
+      </main>
+    </div>
   );
 }
